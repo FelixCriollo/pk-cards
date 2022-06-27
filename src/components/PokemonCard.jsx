@@ -1,28 +1,43 @@
+import { CardContainer, CardContInfo, PokeType, CardStt, CardContentItems } from "./cardStyles"
+import { PokemonAboutCont } from "./PokemonAboutCont"
+import { PokemonStatsCont } from "./PokemonStatsCont"
+import { PokemonHeaderCont } from "./PokemonHeaderCont"
 import { colors } from "../data/colors"
-// import { findColorByNameObj } from "../utils"
-import { CardId, CardT } from "./cardStyles";
-import { PokemonType } from "./PokemonType";
+import shadowP from "../assets/pokeLoader.png"
 
 
 function PokemonCard({ pokemon }) {
-  // console.log(pokemon);
-  if (Object.entries(pokemon).length !== 0) {
-    const color = colors[pokemon.types[0]]
-    console.log(color);
-  }
-  // const type = pokemon.types ?? "fire" 
-  // console.log(pokemon.types);
-  // console.log(type[0]);
-  // console.log(colors["rock"]);
-  // console.log(Object.entries(pokemon).length !== 0);
+  console.log(pokemon);
+  const colorBase = colors[pokemon.types[0]] 
 
   return (
-    <div>
-      {/* <CardT>{pokemon.name}</CardT>
-      <CardId>{pokemon.id}</CardId>
-      <img src={pokemon.image} alt={pokemon.name}/> */}
-      {/* <PokemonType type={pokemon.types[0]}/> */}
-    </div>
+    <CardContainer>
+      <PokemonHeaderCont />
+
+      <CardContInfo>
+        <img className="PokemonPlaceHolder" src={shadowP} alt="pokemon placeholder"/>
+
+        <CardContentItems>
+          <PokeType color={colorBase}>{pokemon.types[0]}</PokeType>
+          <PokeType>Type</PokeType>
+        </CardContentItems>
+
+        <CardStt>About</CardStt>
+
+        <PokemonAboutCont />
+
+        <CardStt>Base Stats</CardStt>
+
+        <div>
+          <PokemonStatsCont stat="HP" statValue={45}/>
+          <PokemonStatsCont stat="ATK" statValue={49}/>
+          <PokemonStatsCont stat="DEF" statValue={49}/>
+          <PokemonStatsCont stat="SATK" statValue={65}/>
+          <PokemonStatsCont stat="SDEF" statValue={65}/>
+          <PokemonStatsCont stat="SPD" statValue={45}/>
+        </div>
+      </CardContInfo>
+    </CardContainer>
   )
 }
 

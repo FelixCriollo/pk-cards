@@ -35,7 +35,7 @@ function PokemonAboutCont({
         <div className="CardAboutInfo__Subitem--text">
           <CardP>{abilities[0]}</CardP>
 
-          <CardP>{abilities[0]}</CardP>
+          <CardP>{abilities[1]}</CardP>
         </div>
         
         <p className="CardAboutInfo__Text">Moves</p>
