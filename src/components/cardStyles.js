@@ -109,7 +109,6 @@ export const CardAboutInfo = styled.div`
     }
 
     &--text {
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -118,11 +117,13 @@ export const CardAboutInfo = styled.div`
 
   .CardAboutInfo__Subitem {
     display: flex;
+    align-items: center;
     padding: 0.625em 0 0.625em 0;
     gap: 0.5em;
-
+    
     &--text {
-      display: block;
+      height: 36px;
+      justify-content: center;
     }
   }
 
@@ -146,6 +147,7 @@ export const CardStatsCont = styled.div`
   }
 
   .PokemonStatsCont__Fill p {
+    width: 26.3px;
     padding-right: 0.75em;
   }
 `

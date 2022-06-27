@@ -1,4 +1,4 @@
-import { zeroPad } from "../utils/zeroFormat"
+import { zeroPad } from "../utils"
 import { colors } from "../data/colors"
 import { CardP, CardStatsCont, CardFiller } from "./cardStyles"
 
@@ -12,7 +12,7 @@ function PokemonStatsCont({
 
   return (
     <CardStatsCont>
-      <CardP weight="bold" color={colors[color]}>{stat}</CardP>
+      <CardP weight="bold" color={color}>{stat}</CardP>
 
       <div className="PokemonStatsCont__Fill">
         <CardP color={colors["darkGray"]}>{valueF}</CardP>

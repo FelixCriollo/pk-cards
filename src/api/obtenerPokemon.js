@@ -16,7 +16,7 @@ const getPokemonData = async (id) => {
       specialDefense: pokemon.stats[4].base_stat,
       speed: pokemon.stats[5].base_stat
     },
-    types: [pokemon.types[0].type.name, pokemon.types[1].type.name],
+    types: [pokemon.types[0].type.name, pokemon?.types[1]?.type.name],
   }
 } 
 

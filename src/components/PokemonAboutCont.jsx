@@ -2,6 +2,7 @@ import { CardAboutInfo } from "./cardStyles";
 import { CardP } from "./cardStyles";
 import weight from '../assets/weight.svg'
 import height from '../assets/height.svg'
+import { colors } from "../data/colors";
 
 function PokemonAboutCont({
     pokeWeight = 9.9,
@@ -33,9 +34,13 @@ function PokemonAboutCont({
 
       <div className="CardAboutInfo__Item CardAboutInfo__Item--text">
         <div className="CardAboutInfo__Subitem--text">
-          <CardP>{abilities[0]}</CardP>
-
-          <CardP>{abilities[1]}</CardP>
+          <CardP color={colors["darkGray"]}>{abilities[0]}</CardP>
+          
+          {
+            abilities[1] !== null
+              ? <CardP color={colors["darkGray"]}>{abilities[1]}</CardP>
+              : null
+          }
         </div>
         
         <p className="CardAboutInfo__Text">Moves</p>
