@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from "../data/colors"
+import { colors } from "../../data/colors"
 
 // COMPONENTS 
 export const CardP = styled.p`
@@ -48,8 +48,8 @@ export const CardContainer = styled.div`
   &::before {
     content: "";
     position: absolute;
-    width: 208px;
-    height: 208px;
+    width: 13em;
+    height: 13em;
     background: url("../pokeball.png");
     background-size: cover;
     top: 0.5em;
@@ -68,7 +68,7 @@ export const CardContInfo = styled.div`
   background-color: #fff;
 
   .PokemonPlaceHolder {
-    width: 200px;
+    width: 12.5em;
     position: absolute;
     top: -144px;
     left: 50%;

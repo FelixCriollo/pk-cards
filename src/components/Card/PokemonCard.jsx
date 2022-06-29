@@ -1,12 +1,14 @@
-import { CardContainer, CardContInfo, PokeType, CardStt, CardContentItems } from "./cardStyles"
-import { PokemonAboutCont } from "./PokemonAboutCont"
-import { PokemonStatsCont } from "./PokemonStatsCont"
-import { PokemonHeaderCont } from "./PokemonHeaderCont"
-import { colors } from "../data/colors"
-import { toCapitalCase } from "../utils"
+import { CardContainer, CardContInfo, 
+  PokeType, CardStt, CardContentItems } from "./cardStyles"
+
+import { PokemonAboutCont } from "./complements/PokemonAboutCont"
+import { PokemonStatsCont } from "./complements/PokemonStatsCont"
+import { PokemonHeaderCont } from "./complements/PokemonHeaderCont"
+import { colors } from "@data/colors"
+import { toCapitalCase } from "@utils"
 
 
-function PokemonCard({ pokemon }) {
+export default function PokemonCard({ pokemon }) {
   console.log(pokemon);
   const colorBase = colors[pokemon.types[0]] 
 
@@ -57,5 +59,3 @@ function PokemonCard({ pokemon }) {
     </CardContainer>
   )
 }
-
-export { PokemonCard }

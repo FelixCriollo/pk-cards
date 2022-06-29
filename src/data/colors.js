@@ -15,7 +15,7 @@ export const colors = {
   ground: "#DEC16B",
   bug: "#A7B723",
   fire: "#F57D31",
-  flectric: "#F9CF30",
+  electric: "#F9CF30",
   dragon: "#7037FF",
   white: "#fff",
   darkGray: "#212121",

@@ -1,11 +1,12 @@
-import { CardContainer, CardContInfo, PokeType, CardStt, CardContentItems } from "./cardStyles"
-import { PokemonAboutCont } from "./PokemonAboutCont"
-import { PokemonStatsCont } from "./PokemonStatsCont"
-import { PokemonHeaderCont } from "./PokemonHeaderCont"
-import shadowP from "../assets/pokeLoader.png"
-import './cardStyles.css'
+import { CardContainer, CardContInfo, 
+  PokeType, CardStt, CardContentItems } from "./cardStyles"
+import { PokemonAboutCont } from "./complements/PokemonAboutCont"
+import { PokemonStatsCont } from "./complements/PokemonStatsCont"
+import { PokemonHeaderCont } from "./complements/PokemonHeaderCont"
+import shadowP from "../../assets/pokeLoader.png"
+import './cardStyles'
 
-function PokemonCardLoader() {
+export default function PokemonCardLoader() {
   return (
     <CardContainer>
       <PokemonHeaderCont />
@@ -36,5 +37,3 @@ function PokemonCardLoader() {
     </CardContainer>
   )
 }
-
-export { PokemonCardLoader }

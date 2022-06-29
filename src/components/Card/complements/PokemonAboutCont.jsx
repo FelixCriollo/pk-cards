@@ -1,8 +1,8 @@
-import { CardAboutInfo } from "./cardStyles";
-import { CardP } from "./cardStyles";
-import weight from '../assets/weight.svg'
-import height from '../assets/height.svg'
-import { colors } from "../data/colors";
+import { CardAboutInfo } from "../cardStyles";
+import { CardP } from "../cardStyles";
+import weight from '@assets/weight.svg'
+import height from '@assets/height.svg'
+import { colors } from "@data/colors";
 
 function PokemonAboutCont({
     pokeWeight = 9.9,
