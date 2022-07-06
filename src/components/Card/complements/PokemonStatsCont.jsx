@@ -1,6 +1,7 @@
 import { zeroPad } from "@utils"
 import { colors } from "@data/colors"
-import { CardP, CardStatsCont, CardFiller } from "../cardStyles"
+import { CardP } from "../card.styles"
+import { CardFiller, CardStatsCont } from "./styles"
 
 function PokemonStatsCont({
     stat = "HP", 

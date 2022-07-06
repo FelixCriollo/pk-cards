@@ -1,10 +1,10 @@
-import { CardContainer, CardContInfo, 
-  PokeType, CardStt, CardContentItems } from "./cardStyles"
+import { PokeType, CardStt,  } from "./card.styles"
+import { CardContainer, CardContInfo, CardContentItems  } from "./cardContainers.styles"
 import { PokemonAboutCont } from "./complements/PokemonAboutCont"
 import { PokemonStatsCont } from "./complements/PokemonStatsCont"
 import { PokemonHeaderCont } from "./complements/PokemonHeaderCont"
 import shadowP from "../../assets/pokeLoader.png"
-import './cardStyles'
+import './card.styles'
 
 export default function PokemonCardLoader() {
   return (
@@ -12,7 +12,7 @@ export default function PokemonCardLoader() {
       <PokemonHeaderCont />
 
       <CardContInfo>
-        <img className="PokemonPlaceHolder" src={shadowP} alt="pokemon placeholder"/>
+        <img className="PokemonImage" src={shadowP} alt="pokemon placeholder"/>
 
         <CardContentItems>
           <PokeType>Type</PokeType>

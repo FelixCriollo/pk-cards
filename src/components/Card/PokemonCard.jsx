@@ -1,6 +1,5 @@
-import { CardContainer, CardContInfo, 
-  PokeType, CardStt, CardContentItems } from "./cardStyles"
-
+import { PokeType, CardStt,  } from "./card.styles"
+import { CardContainer, CardContInfo, CardContentItems  } from "./cardContainers.styles"
 import { PokemonAboutCont } from "./complements/PokemonAboutCont"
 import { PokemonStatsCont } from "./complements/PokemonStatsCont"
 import { PokemonHeaderCont } from "./complements/PokemonHeaderCont"
@@ -17,7 +16,7 @@ export default function PokemonCard({ pokemon }) {
       <PokemonHeaderCont name={toCapitalCase(pokemon.name)} id={pokemon.id}/>
 
       <CardContInfo>
-        <img className="PokemonPlaceHolder" src={pokemon.image} alt="pokemon placeholder"/>
+        <img className="PokemonImage" src={pokemon.image} alt={pokemon.name}/>
 
         <CardContentItems>
           <PokeType 

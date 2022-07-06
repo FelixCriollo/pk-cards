@@ -1,5 +1,6 @@
 import { zeroPad } from "@utils"
-import { CardT, CardId, CardHeader } from "../cardStyles"
+import { CardT, CardId } from "../card.styles"
+import { CardHeader } from "../cardContainers.styles"
 
 function PokemonHeaderCont({name = "Pokémon Name", id = "999"}) {
   

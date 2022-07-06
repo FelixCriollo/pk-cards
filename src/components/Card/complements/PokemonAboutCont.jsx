@@ -1,5 +1,5 @@
-import { CardAboutInfo } from "../cardStyles";
-import { CardP } from "../cardStyles";
+import { CardAboutInfo } from "./styles";
+import { CardP } from "../card.styles";
 import weight from '@assets/weight.svg'
 import height from '@assets/height.svg'
 import { colors } from "@data/colors";

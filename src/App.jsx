@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { PokemonCard, PokemonCardLoader } from './components/Card';
 import { getPokemonData } from './api/obtenerPokemon';
+import { HeaderS } from './styled-components/header.styles';
+import { ContainerS } from './styled-components/container.styles';
 
 function App() {
   const [pokemon, setPokemon] = useState({})
@@ -22,15 +24,23 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={e => handleSearch(e)}>
-        <input type="text" name="pokeInput" id="" />
-        <button type="submit">dale</button>
-      </form>
-      {
-        Object.entries(pokemon).length !== 0
+      <HeaderS>
+        <ContainerS>
+          <img src="/PokeballLogo.png" className='logo' alt="pokeball" />
+
+          <form onSubmit={e => handleSearch(e)}>
+            <input type="text" name="pokeInput" className='inputS' />
+            <button type="submit">dale</button>
+          </form>
+        </ContainerS>
+      </HeaderS>
+      <ContainerS>
+        {
+          Object.entries(pokemon).length !== 0
           ? <PokemonCard pokemon={pokemon} />
           : <PokemonCardLoader />
-      }      
+        }      
+      </ContainerS>
     </div>
   )
 }
