@@ -8,7 +8,6 @@ import { toCapitalCase } from "@utils"
 
 
 export default function PokemonCard({ pokemon }) {
-  console.log(pokemon);
   const colorBase = colors[pokemon.types[0]] 
 
   return (

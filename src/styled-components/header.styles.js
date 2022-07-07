@@ -36,9 +36,15 @@ export const HeaderS = styled.header`
     border: 1px solid #ccc;
   }
   .inputS + button {
+    font-weight: 600;
     color: ${colors["lightGray"]};
     padding: 0.35em 0.5em;
     background: ${colors["fighting"]};
     border: 1px solid ${colors["fighting"]};
+
+    &:hover {
+      background-color: ${colors["fighting"]+"70"};
+      border-color: ${colors["fighting"]+"70"};
+    }
   }  
 `

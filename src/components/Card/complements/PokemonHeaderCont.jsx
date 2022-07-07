@@ -3,7 +3,6 @@ import { CardT, CardId } from "../card.styles"
 import { CardHeader } from "../cardContainers.styles"
 
 function PokemonHeaderCont({name = "Pokémon Name", id = "999"}) {
-  
   const idF = zeroPad(id, 3)
   
   return(

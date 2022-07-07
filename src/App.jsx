@@ -1,46 +1,54 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { PokemonCard, PokemonCardLoader } from './components/Card';
-import { getPokemonData } from './api/obtenerPokemon';
 import { HeaderS } from './styled-components/header.styles';
 import { ContainerS } from './styled-components/container.styles';
+import { useGetPokemon } from './hooks/useGetPokemon';
 
 function App() {
-  const [pokemon, setPokemon] = useState({})
-
-  useEffect(() => {
-    const obtenerData = async () => {
-      const data = await getPokemonData(1)
-      setPokemon(data)
-    }
-    obtenerData()
-  }, [])
+  const [pokemon, getPokemon] = useGetPokemon()
+  const [idPokemon, setIdPokemon] = useState("")
 
   const handleSearch = async (e) => {
     e.preventDefault()
-    const poke = e.target.pokeInput.value
-    const data = await getPokemonData(poke)
-    setPokemon(data)
+    const poke = Number(e.target.pokeInput.value)
+    getPokemon(poke)
+  }
+
+  const handleChangeInput = (e) => {
+    const regex = new RegExp(/^[0-9,$]*$/);
+    const idPokeL = e.target.value;
+
+    if (idPokeL.match(regex)) {
+      setIdPokemon(idPokeL)
+    }
   }
 
   return (
     <div className="App">
-      <HeaderS>
-        <ContainerS>
-          <img src="/PokeballLogo.png" className='logo' alt="pokeball" />
+      <main>
+        <HeaderS>
+          <ContainerS>
+            <img src="/PokeballLogo.png" className='logo' alt="pokeball" />
 
-          <form onSubmit={e => handleSearch(e)}>
-            <input type="text" name="pokeInput" className='inputS' />
-            <button type="submit">dale</button>
-          </form>
+            <form onSubmit={e => handleSearch(e)}>
+              <input 
+                type="text" name="pokeInput" className='inputS'
+                onChange={e => handleChangeInput(e)}
+                value={idPokemon}
+              />
+              <button type="submit">Search</button>
+            </form>
+          </ContainerS>
+        </HeaderS>
+
+        <ContainerS>
+          {
+            Object.entries(pokemon).length !== 0
+            ? <PokemonCard pokemon={pokemon} />
+            : <PokemonCardLoader />
+          }      
         </ContainerS>
-      </HeaderS>
-      <ContainerS>
-        {
-          Object.entries(pokemon).length !== 0
-          ? <PokemonCard pokemon={pokemon} />
-          : <PokemonCardLoader />
-        }      
-      </ContainerS>
+      </main>
     </div>
   )
 }
