@@ -1,6 +1,7 @@
 const getPokemonData = async (id) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const pokemon = await response.json();
+  
   return {
     name: pokemon.name,
     weight: pokemon.weight,

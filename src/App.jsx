@@ -3,6 +3,7 @@ import { PokemonCard, PokemonCardLoader } from './components/Card';
 import { HeaderS } from './styled-components/header.styles';
 import { ContainerS } from './styled-components/container.styles';
 import { useGetPokemon } from './hooks/useGetPokemon';
+import { PokemonControl } from './components/Controls';
 
 function App() {
   const [pokemon, getPokemon] = useGetPokemon()
@@ -46,7 +47,8 @@ function App() {
             Object.entries(pokemon).length !== 0
             ? <PokemonCard pokemon={pokemon} />
             : <PokemonCardLoader />
-          }      
+          }
+          <PokemonControl getPokemon={getPokemon} idPokemon={pokemon.id}/>
         </ContainerS>
       </main>
     </div>

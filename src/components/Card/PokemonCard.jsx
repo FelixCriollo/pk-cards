@@ -4,6 +4,7 @@ import { PokemonAboutCont } from "./complements/PokemonAboutCont"
 import { PokemonStatsCont } from "./complements/PokemonStatsCont"
 import { PokemonHeaderCont } from "./complements/PokemonHeaderCont"
 import { colors } from "@data/colors"
+import shadowP from "../../assets/pokeLoader.png"
 import { toCapitalCase } from "@utils"
 
 
@@ -15,7 +16,7 @@ export default function PokemonCard({ pokemon }) {
       <PokemonHeaderCont name={toCapitalCase(pokemon.name)} id={pokemon.id}/>
 
       <CardContInfo>
-        <img className="PokemonImage" src={pokemon.image} alt={pokemon.name}/>
+        <img className="PokemonImage" src={pokemon.image ?? shadowP} alt={pokemon.name}/>
 
         <CardContentItems>
           <PokeType 
