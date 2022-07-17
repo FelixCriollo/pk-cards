@@ -6,7 +6,7 @@ export const HeaderS = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 2px 2px ${colors["fighting"]+"70"};
+  box-shadow: 0px 0px 1.5em .2em ${colors["fighting"]+"70"};
 
   & > div {
     display: flex;

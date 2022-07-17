@@ -1,11 +1,11 @@
 import ControlButton from "./ControlButton"
 import { PokemonControlS } from "./controls.style"
 
-export default function PokemonControl({ idPokemon, getPokemon }) {
+export default function PokemonControl({ idPokemon, getPokemon, setIdPokemon }) {
   return (
     <PokemonControlS>
-      <ControlButton direction="left" getPokemon={getPokemon} idPokemon={idPokemon}/> 
-      <ControlButton direction="right" getPokemon={getPokemon} idPokemon={idPokemon}/> 
+      <ControlButton setIdPokemon={setIdPokemon} direction="left" getPokemon={getPokemon} idPokemon={idPokemon}/> 
+      <ControlButton setIdPokemon={setIdPokemon} direction="right" getPokemon={getPokemon} idPokemon={idPokemon}/> 
     </PokemonControlS>
   )
 }

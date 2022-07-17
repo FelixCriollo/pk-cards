@@ -4,10 +4,12 @@ import { HeaderS } from './styled-components/header.styles';
 import { ContainerS } from './styled-components/container.styles';
 import { useGetPokemon } from './hooks/useGetPokemon';
 import { PokemonControl } from './components/Controls';
+import { MainS } from './styled-components/main.styles';
 
 function App() {
   const [pokemon, getPokemon] = useGetPokemon()
-  const [idPokemon, setIdPokemon] = useState("")
+  const [idPokemon, setIdPokemon] = useState(1)
+  console.log(idPokemon);
 
   const handleSearch = async (e) => {
     e.preventDefault()
@@ -22,11 +24,13 @@ function App() {
     if (idPokeL.match(regex)) {
       setIdPokemon(idPokeL)
     }
+    if (Number(idPokeL) >= 898) {
+      setIdPokemon("898")
+    }
   }
 
   return (
     <div className="App">
-      <main>
         <HeaderS>
           <ContainerS>
             <img src="/PokeballLogo.png" className='logo' alt="pokeball" />
@@ -36,21 +40,23 @@ function App() {
                 type="text" name="pokeInput" className='inputS'
                 onChange={e => handleChangeInput(e)}
                 value={idPokemon}
-              />
+                />
               <button type="submit">Search</button>
             </form>
           </ContainerS>
         </HeaderS>
 
-        <ContainerS>
-          {
-            Object.entries(pokemon).length !== 0
-            ? <PokemonCard pokemon={pokemon} />
-            : <PokemonCardLoader />
-          }
-          <PokemonControl getPokemon={getPokemon} idPokemon={pokemon.id}/>
-        </ContainerS>
-      </main>
+        <MainS>
+          <ContainerS>
+            {
+              Object.entries(pokemon).length !== 0
+              ? <PokemonCard pokemon={pokemon} />
+              : <PokemonCardLoader />
+            }
+            <PokemonControl getPokemon={getPokemon} idPokemon={pokemon.id} 
+              setIdPokemon={setIdPokemon}/>
+          </ContainerS>
+        </MainS>
     </div>
   )
 }

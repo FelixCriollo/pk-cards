@@ -1,13 +1,16 @@
 import { ControlButtonS } from "./controls.style";
+import { ArrowLeft, ArrowRight } from "../svg";
 
-export default function ControlButton({ direction, idPokemon, getPokemon }) {
+export default function ControlButton({ direction, idPokemon, getPokemon, setIdPokemon }) {
   const handleOnClick = () => {
 
     if (direction === "left" && idPokemon > 1) {
       getPokemon(idPokemon - 1);
+      setIdPokemon(idPokemon - 1)
     } 
     if (direction === "right" && idPokemon <= 897) {
       getPokemon(idPokemon + 1);
+      setIdPokemon(idPokemon + 1)
     }
 
   }
@@ -20,8 +23,8 @@ export default function ControlButton({ direction, idPokemon, getPokemon }) {
     >
       {
         direction === "left"
-        ? <img src="/leftArrow.png" alt="left" />
-        : <img src="/rightArrow.png" alt="right" />
+        ? <ArrowLeft />
+        : <ArrowRight />
       }
     </ControlButtonS>
   )

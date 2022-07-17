@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
   padding: 1.5em 0.25em 0.25em 0.25em;
   border-radius: 0.75em;
   background: ${props => props.bgColor ?? colors["wireframe"]};
+  box-shadow: 0px 0px .5em .1em rgba(0,0,0,0.5);
 
   &::before {
     content: "";

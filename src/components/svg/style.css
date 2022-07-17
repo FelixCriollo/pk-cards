@@ -1,0 +1,23 @@
+.ArrowSVG {
+  transform: translateY(-.5em) scale(1.35);
+}
+
+.ArrowSVG:hover {
+  transform: translateY(-.5em) scale(1.65);
+}
+
+.ArrowSVG path{
+  fill: #fff;
+}
+
+.ArrowSVG:hover path{
+  fill: #ffffffee;
+}
+
+
+
+/* @media (max-width: 480px) {
+  .ArrowSVG {
+    transform: translateY(-.5em) scale(1.25);
+  }
+} */
